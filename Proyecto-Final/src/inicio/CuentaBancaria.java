@@ -146,6 +146,11 @@ public class CuentaBancaria {
 		}
 		
 	}
+	public String numCuentaCompleto() {
+		String completo ="";
+		completo = codEntidad + "-" + codOficina + "-" + control + "-" + numCuenta;
+		return completo;
+	}
 	
 	
 	public void setSaldo(double saldo) {
@@ -156,7 +161,8 @@ public class CuentaBancaria {
 		
 	}
 	
-	public void hacerIngreso(double ingreso) {
+	public void hacerIngreso() {
+		double ingreso = 0;
 		Scanner leer = new Scanner(System.in);
 		System.out.println("Dime una cantidad para ingresar a tu cuenta");
 		ingreso = leer.nextDouble();
@@ -174,7 +180,8 @@ public class CuentaBancaria {
 		
 	}
 	
-	public void retirarEfectivo(double retiro) {
+	public void retirarEfectivo() {
+		double retiro=0;
 		Scanner leer = new Scanner(System.in);
 		System.out.println("Dime una cantidad de dinero para retirar de tu cuenta");
 		retiro = leer.nextDouble();
@@ -193,10 +200,29 @@ public class CuentaBancaria {
 		
 	}
 	
+	
+	public String getTitular() {
+		return titular;
+	}
+	
+	public String getCodEntidad() {
+		return codEntidad;
+	}
+	
+	public String getCodOficina() {
+		return codOficina;
+	}
 	public double getSaldo() {
 		return saldo;
 	}
-
+	
+	public String getNumCuenta() {
+		return numCuenta;
+	}
+	
+	public String getControl() {
+		return control;
+	}
 	public String toString() {
 		return "CuentaBancaria [titular=" + titular + ", numCuenta=" + numCuenta + ", codEntidad=" + codEntidad
 				+ ", codOficina=" + codOficina + ", saldo=" + saldo + ", control=" + control + "]";
